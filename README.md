@@ -5,4 +5,4 @@ This module is for making XML recipients on the [LeadConduit](http://activeprosp
 Please see the
 [license agreement](http://creativecommons.org/licenses/by-nc-nd/4.0/).
 
-[![Build Status](https://travis-ci.org/activeprospect/leadconduit-integration-xml.svg?branch=master)](https://travis-ci.org/activeprospect/leadconduit-integration-xml)
+[![Build Status](https://github.com/activeprospect/leadconduit-integration-xml/workflows/Node.js%20CI/badge.svg)](https://github.com/activeprospect/leadconduit-integration-xml/actions)
