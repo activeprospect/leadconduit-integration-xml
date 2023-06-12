@@ -206,29 +206,29 @@
     });
     it('should require not require method', function() {
       return assert.isUndefined(integration.validate({
-        url: 'http://foo'
+        url: 'http://foo.com'
       }));
     });
     it('should require valid method', function() {
       return assert.equal(integration.validate({
-        url: 'http://foo',
+        url: 'http://foo.com',
         method: 'HEAD'
       }), 'Unsupported HTTP method - use POST, PUT');
     });
     it('should require valid search outcome', function() {
       return assert.equal(integration.validate({
-        url: 'http://foo',
+        url: 'http://foo.com',
         outcome_on_match: 'donkey'
-      }), "Outcome on match must be 'success' or 'failure'");
+      }), "Outcome on match must be 'success', 'failure', or 'error'");
     });
     it('should pass validation', function() {
       return assert.isUndefined(integration.validate({
-        url: 'http://foo'
+        url: 'http://foo.com'
       }));
     });
     it('should allow valid content-type header', function() {
       return assert.isUndefined(integration.validate({
-        url: 'http://foo',
+        url: 'http://foo.com',
         header: {
           'Content-Type': 'application/xml'
         }
@@ -236,7 +236,7 @@
     });
     it('should not allow invalid content-type header', function() {
       return assert.equal(integration.validate({
-        url: 'http://foo',
+        url: 'http://foo.com',
         header: {
           'Content-Type': 'text/plain'
         }
@@ -244,7 +244,7 @@
     });
     it('should not allow content-length header', function() {
       return assert.equal(integration.validate({
-        url: 'http://foo',
+        url: 'http://foo.com',
         header: {
           'Content-Length': '10'
         }
@@ -252,7 +252,7 @@
     });
     return it('should not allow accept header', function() {
       return assert.equal(integration.validate({
-        url: 'http://foo',
+        url: 'http://foo.com',
         header: {
           'Accept': 'text/whatever'
         }
